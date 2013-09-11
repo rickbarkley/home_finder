@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bedrooms:</b>
+  <%= @plan.bedrooms %>
+</p>
+
+<p>
+  <b>Sqfoot:</b>
+  <%= @plan.sqfoot %>
+</p>
+
+<p>
+  <b>Levels:</b>
+  <%= @plan.levels %>
+</p>
+
+<p>
+  <b>Bathrooms:</b>
+  <%= @plan.bathrooms %>
+</p>
+
+<p>
+  <b>Price range:</b>
+  <%= @plan.price_range %>
+</p>
+
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

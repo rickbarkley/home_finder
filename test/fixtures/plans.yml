@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bedrooms: 1
+  sqfoot: 1
+  levels: 1
+  bathrooms: 1
+  price_range: 1
+
+two:
+  bedrooms: 1
+  sqfoot: 1
+  levels: 1
+  bathrooms: 1
+  price_range: 1
