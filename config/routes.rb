@@ -4,6 +4,9 @@ HomeFinder::Application.routes.draw do
 
   resources :plans
   
+  match '/about' => 'pages#about'
+  match '/contact' => 'pages#contact'
+  
   root :to => 'pages#home'
 
 
