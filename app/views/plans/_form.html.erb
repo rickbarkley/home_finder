@@ -1,4 +1,9 @@
 <%= form_for @plan, :url => plans_path, :html => { :multipart => true } do |f| %>
+<div class="control-group">
+    <%= f.label :name, "Plan Name", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'number_field' %>
+    </div>
   <div class="control-group">
     <%= f.label :bedrooms, :class => 'control-label' %>
     <div class="controls">
