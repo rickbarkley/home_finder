@@ -54,7 +54,7 @@
   <tbody>
     <% @plans.each do |plan| %>
       <tr>
-        <td><%= link_to image_tag plan.drawing(:medium) %></td>
+        <td><%= link_to image_tag(plan.drawing(:medium)), plan_path(plan) %></td>
         <td><%= link_to plan.bedrooms, plan_path(plan) %></td>
         <td><%= plan.sqfoot %></td>
         <td><%= plan.levels %></td>
