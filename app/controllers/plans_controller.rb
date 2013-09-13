@@ -2,7 +2,9 @@ class PlansController < ApplicationController
   # GET /plans
   # GET /plans.json
   def index
-    @plans = Plan.all
+
+    @q = Plan.search(params[:q])
+    @plans = @q.result(distinct: true)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,12 +16,15 @@ class PlansController < ApplicationController
   # GET /plans/1.json
   def show
     @plan = Plan.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @plan }
+      format.pdf do
+        render :pdf => "file_name",
+                :disposition => 'attachment'
     end
   end
+end
 
   # GET /plans/new
   # GET /plans/new.json
@@ -79,5 +84,12 @@ class PlansController < ApplicationController
       format.html { redirect_to plans_url }
       format.json { head :no_content }
     end
+  end
+  def pdf
+    pdf_filename = File.join(Rails.root, "tmp/my_document.pdf")
+    send_file(pdf_filename, :filename => "your_document.pdf", :disposition => 'inline', :type => "application/pdf")
+  end
+  def wicked_pdf_image_tag_for_public(img, options={})
+    image_tag "file://#{Rails.root.join('public', 'images', img)}", options
   end
 end

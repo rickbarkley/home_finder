@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130912035010) do
+ActiveRecord::Schema.define(:version => 20130913171609) do
 
   create_table "pages", :force => true do |t|
     t.string   "home"
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(:version => 20130912035010) do
     t.integer  "drawing_file_size"
     t.datetime "drawing_updated_at"
     t.string   "name"
+    t.integer  "half_bath"
+    t.integer  "living"
+    t.string   "suite"
+    t.string   "stories"
+    t.integer  "dining"
+    t.string   "view"
   end
 
 end

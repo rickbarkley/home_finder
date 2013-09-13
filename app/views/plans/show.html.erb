@@ -17,7 +17,10 @@
   <dt><strong><%= model_class.human_attribute_name(:price_range) %>:</strong></dt>
   <dd><%= @plan.price_range %></dd>
   <dt><strong><%= model_class.human_attribute_name(:drawing) %>:</strong></dt><br /><br />
-<p><center><dd><%= image_tag @plan.drawing.url %></dd></center><p>
+
+<p><center><dd><%= image_tag @plan.drawing.url, :type => 'application/pdf' %></dd></center><p>
+	<p><center><dd><%= image_tag @plan.drawing.url(:medium), :type => 'application/pdf' %></dd></center><p>
+
 </dl>
 
 <div class="form-actions">

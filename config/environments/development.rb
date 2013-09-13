@@ -37,4 +37,5 @@ HomeFinder::Application.configure do
   
   #paperclip settings
   Paperclip.options[:command_path] = "/usr/local/bin/"
+  config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
 end
