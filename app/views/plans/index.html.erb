@@ -38,43 +38,15 @@
 <%= link_to "Start Over", "/plans" %></p>
 </div>
 <% end %>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:drawing) %></th>
-      <th><%= model_class.human_attribute_name(:bedrooms) %></th>
-      <th><%= model_class.human_attribute_name(:sqfoot) %></th>
-      <th><%= model_class.human_attribute_name(:levels) %></th>
-      <th><%= model_class.human_attribute_name(:bathrooms) %></th>
-
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="border span12"><p></p></div>
+<div class="image span5">
     <% @plans.each do |plan| %>
-      <tr>
-        <td><%= link_to image_tag(plan.drawing(:medium)), plan_path(plan) %></td>
-        <td><%= link_to plan.bedrooms, plan_path(plan) %></td>
-        <td><%= plan.sqfoot %></td>
-        <td><%= plan.levels %></td>
-        <td><%= plan.bathrooms %></td>
-
-
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_plan_path(plan), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      plan_path(plan),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<%= link_to image_tag(plan.drawing.url(:medium)), plan_path(plan) %>
+</div>
+<% end %>
+<div class="border span12"><p></p></div>
+<div class="new-button span12">
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_plan_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary' %><br /><br />
+</div>

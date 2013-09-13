@@ -1,7 +1,9 @@
+
 <%- model_class = Plan -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
+<h3><%= link_to " Back", '/plans' %></h3>
 
 <dl class="dl-horizontal">
 	<dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
@@ -10,16 +12,16 @@
   <dd><%= @plan.bedrooms %></dd>
   <dt><strong><%= model_class.human_attribute_name(:sqfoot) %>:</strong></dt>
   <dd><%= @plan.sqfoot %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:levels) %>:</strong></dt>
-  <dd><%= @plan.levels %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:stories) %>:</strong></dt>
+  <dd><%= @plan.stories %></dd>
   <dt><strong><%= model_class.human_attribute_name(:bathrooms) %>:</strong></dt>
   <dd><%= @plan.bathrooms %></dd>
   <dt><strong><%= model_class.human_attribute_name(:price_range) %>:</strong></dt>
   <dd><%= @plan.price_range %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:drawing) %>:</strong></dt><br /><br />
-
-<p><center><dd><%= image_tag @plan.drawing.url, :type => 'application/pdf' %></dd></center><p>
-	<p><center><dd><%= image_tag @plan.drawing.url(:medium), :type => 'application/pdf' %></dd></center><p>
+  <dt><strong><%= model_class.human_attribute_name(:drawing) %>:</strong></dt>
+<div><br /><br /><br /><br /><center>
+<p><%= image_tag @plan.drawing.url %></p></center>
+</div>
 
 </dl>
 
