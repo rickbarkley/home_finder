@@ -5,7 +5,7 @@
 </div>
 
 <%= search_form_for @q do |f| %>
-<div class="field span4">
+<div class="field span5">
 <%= f.label :sqfoot_gteq, "Square Footage Between" %>
 <%= f.text_field :sqfoot_gteq %>
 <%= f.label :sqfoot_lteq, "and" %>
@@ -20,7 +20,7 @@
 	  <%= f.label :half_bath_eq, "Half-Bathrooms" %>
 	<%= f.select :half_bath_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3]]), :class => 'select_field'  %>
 	</div>
-<div class="field span4">
+<div class="field span5">
 	<%= f.label :living_eq, "Number of Living Areas" %>
 	<%= f.select :living_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %>	
 	
@@ -35,7 +35,7 @@
 <p>
   <%= f.submit %>
 
-<%= link_to "Start Over", "/plans" %></p>
+<%= link_to "Start Over", "/plans" %></p><br /><br /><br />
 </div>
 <% end %>
 <div class="border span12"><p></p></div>
