@@ -12,7 +12,7 @@ gem "aws-sdk"
 gem "devise"
 gem "cancan"
 gem "wicked_pdf"
-gem 'wkhtmltopdf-binary'
+
 gem "ransack" 
 
 # Gems used only for assets and not required
